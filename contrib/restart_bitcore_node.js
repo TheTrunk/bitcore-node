@@ -8,4 +8,4 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 pkill -2 -x bitcore
 wait
-exec $DIR/../bin/bitcore-node start >> /tmp/bwdb-out 2>&1 &
+exec $DIR/../bin/bitcore-node-hush start >> /tmp/bwdb-out 2>&1 &

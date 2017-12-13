@@ -1,34 +1,34 @@
-Bitcore Node
+Bitcore Node Hush 
 ============
 
-A Bitcoin blockchain indexing and query service. Intended to be used with as a Bitcoin full node or in conjunction with a Bitcoin full node.
+A Hush blockchain indexing and query service. Intended to be used with as a Hush full node or in conjunction with a Hush full node.
 
 ## Upgrading from previous versions of Bitcore Node
 
-There is no upgrade path from previous versions of Bitcore Node due to the removal of the included Bitcoin Core software. By installing this version, you must resynchronize the indexes from scratch.
+There is no upgrade path from previous versions of Bitcore Node Hush due to the removal of the included Hush Core software. By installing this version, you must resynchronize the indexes from scratch.
 
 ## Install
 
 ```bash
 npm install
-./bin/bitcore-node start
+./bin/bitcore-node-hush start
 ```
 
-Note: A default configuration file is placed in the bitcore user's home directory (~/.bitcore/bitcore-node.json). Or, alternatively, you can copy the provided "bitcore-node.json.sample" file to the project's root directory as bitcore-node.json and edit it for your preferences. If you don't have a preferred block source (trusted peer), [Bcoin](https://github.com/bcoin-org/bcoin) will be started automatically and synchronized with the mainnet chain.
+Note: A default configuration file is placed in the bitcore user's home directory (~/.bitcore/bitcore-node-hush.json). Or, alternatively, you can copy the provided "bitcore-node-hush.json.sample" file to the project's root directory as bitcore-node-hush.json and edit it for your preferences. If you don't have a preferred block source (trusted peer), [Bcoin](https://github.com/bcoin-org/bcoin) will be started automatically and synchronized with the mainnet chain.
 
 ## Prerequisites
 
 - Node.js v8.2.0+
-- ~500GB of disk storage
-- ~4GB of RAM
+- ~20GB of disk storage
+- ~2GB of RAM
 
 ## Configuration
 
-The main configuration file is called "bitcore-node.json". This file instructs bitcore-node for the following options:
+The main configuration file is called "bitcore-node-hush.json". This file instructs bitcore-node-hush for the following options:
 
 - location of database files (datadir)
 - tcp port for web services, if configured (port)
-- bitcoin network type (e.g. mainnet, testnet3, regtest), (network)
+- Hush network type (e.g. mainnet, testnet3 = regtest = testnet5), (network)
 - what services to include (services)
 - the services' configuration (servicesConfig)
 
@@ -36,9 +36,9 @@ The main configuration file is called "bitcore-node.json". This file instructs b
 
 There are several add-on services available to extend the functionality of Bitcore:
 
-- [Insight API](https://github.com/bitpay/insight-api)
-- [Insight UI](https://github.com/bitpay/insight-ui)
-- [Bitcore Wallet Service](https://github.com/bitpay/bitcore-wallet-service)
+- [Insight API](https://github.com/TheTrunk/insight-api-hush)
+- [Insight UI](https://github.com/TheTrunk/insight-ui-hush)
+- [Bitcore Wallet Service](https://github.com/TheTrunk/bitcore-wallet-service-hush)
 
 ## Documentation
 
@@ -64,8 +64,10 @@ Please send pull requests for bug fixes, code optimization, and ideas for improv
 
 ## License
 
-Code released under [the MIT license](https://github.com/bitpay/bitcore-node/blob/master/LICENSE).
+Code released under [the MIT license](https://github.com/TheTrunk/bitcore-node-hush/blob/master/LICENSE).
 
 Copyright 2013-2017 BitPay, Inc.
+Copyright 2017 TheTrunk
 
 - bitcoin: Copyright (c) 2009-2015 Bitcoin Core Developers (MIT License)
+

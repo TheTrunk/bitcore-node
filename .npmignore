@@ -22,12 +22,15 @@ coverage/*
 **/*.creator
 *.log
 .DS_Store
+bin/hush*
 bin/bitcoin*
+bin/hushd*
+bin/bitcoind*
 bin/SHA256SUMS.asc
 regtest/data/node1/regtest
 regtest/data/node2/regtest
 regtest/data/node3/regtest
-bitcore-node.json*
+bitcore-node-hush.json*
 *.bak
 *.orig
-lib/services/insight-api
+lib/services/insight-api-hush

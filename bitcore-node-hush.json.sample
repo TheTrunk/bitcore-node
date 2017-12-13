@@ -12,11 +12,11 @@
     "transaction",
     "timestamp",
     "fee",
-    "insight-api",
+    "insight-api-hush",
     "web"
   ],
   "servicesConfig": {
-    "insight-api": {
+    "insight-api-hush": {
       "routePrefix": "api",
       "disableRateLimiter": true,
       "enableCache": true
