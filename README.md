@@ -1,73 +1,59 @@
-Bitcore Node Hush 
+Bitcore Node
 ============
 
-A Hush blockchain indexing and query service. Intended to be used with as a Hush full node or in conjunction with a Hush full node.
-
-## Upgrading from previous versions of Bitcore Node
-
-There is no upgrade path from previous versions of Bitcore Node Hush due to the removal of the included Hush Core software. By installing this version, you must resynchronize the indexes from scratch.
+A Hush full node for building applications and services with Node.js. A node is extensible and can be configured to run additional services. At the minimum a node has an interface to ~~[Bitcoin Core with additional indexing](https://github.com/bitpay/bitcoin/tree/0.12.1-bitcore)~~ for more advanced address queries. Additional services can be enabled to make a node more useful such as exposing new APIs, running a block explorer and wallet service.
 
 ## Install
 
 ```bash
-npm install
-./bin/bitcore-node-hush start
+npm install -g bitcore-node-hush
+bitcore-node start
 ```
-
-Note: A default configuration file is placed in the bitcore user's home directory (~/.bitcore/bitcore-node-hush.json). Or, alternatively, you can copy the provided "bitcore-node-hush.json.sample" file to the project's root directory as bitcore-node-hush.json and edit it for your preferences. If you don't have a preferred block source (trusted peer), [Bcoin](https://github.com/bcoin-org/bcoin) will be started automatically and synchronized with the mainnet chain.
 
 ## Prerequisites
 
-- Node.js v8.2.0+
-- ~20GB of disk storage
-- ~2GB of RAM
+- GNU/Linux x86_32/x86_64, or OSX 64bit *(for hushd distributed binaries)*
+- Node.js v0.10, v0.12 or v4
+- ZeroMQ *(libzmq3-dev for Ubuntu/Debian or zeromq on OSX)*
+- ~200GB of disk storage
+- ~8GB of RAM
 
 ## Configuration
 
-The main configuration file is called "bitcore-node-hush.json". This file instructs bitcore-node-hush for the following options:
+Bitcore includes a Command Line Interface (CLI) for managing, configuring and interfacing with your Bitcore Node.
 
-- location of database files (datadir)
-- tcp port for web services, if configured (port)
-- Hush network type (e.g. mainnet, testnet3 = regtest = testnet5), (network)
-- what services to include (services)
-- the services' configuration (servicesConfig)
+```bash
+bitcore-node create -d <bitcoin-data-dir> mynode
+cd mynode
+bitcore-node install <service>
+bitcore-node install https://github.com/yourname/helloworld
+```
+
+This will create a directory with configuration files for your node and install the necessary dependencies. For more information about (and developing) services, please see the [Service Documentation](docs/services.md).
 
 ## Add-on Services
 
 There are several add-on services available to extend the functionality of Bitcore:
 
-- [Insight API](https://github.com/TheTrunk/insight-api-hush)
-- [Insight UI](https://github.com/TheTrunk/insight-ui-hush)
-- [Bitcore Wallet Service](https://github.com/TheTrunk/bitcore-wallet-service-hush)
+- [Insight API](https://github.com/MyHush/insight-api-hush)
+- [Insight UI](https://github.com/MyHush/insight-ui-hush)
 
 ## Documentation
 
+- [Upgrade Notes](docs/upgrade.md)
 - [Services](docs/services.md)
-  - [Fee](docs/services/fee.md) - Creates a service to handle fee queries
-  - [Header](docs/services/header.md) - Creates a service to handle block headers
-  - [Block](docs/services/block.md) - Creates a service to handle blocks
-  - [Transaction](docs/services/transaction.md) - Creates a service to handle transactions
-  - [Address](docs/services/address.md) - Creates a service to handle addresses
-  - [Mempool](docs/services/mempool.md) - Creates a service to handle mempool
-  - [Timestamp](docs/services/timestamp.md) - Creates a service to handle timestamp
-  - [Db](docs/services/db.md) - Creates a service to handle the database
-  - [p2p](docs/services/p2p.md) - Creates a service to handle the peer-to-peer network
+  - [Bitcoind](docs/services/bitcoind.md) - Interface to Bitcoin Core
   - [Web](docs/services/web.md) - Creates an express application over which services can expose their web/API content
 - [Development Environment](docs/development.md) - Guide for setting up a development environment
 - [Node](docs/node.md) - Details on the node constructor
 - [Bus](docs/bus.md) - Overview of the event bus constructor
 - [Release Process](docs/release.md) - Information about verifying a release and the release process.
 
-## Contributing
-
-Please send pull requests for bug fixes, code optimization, and ideas for improvement. For more information on how to contribute, please refer to our [CONTRIBUTING](https://github.com/bitpay/bitcore/blob/master/CONTRIBUTING.md) file.
 
 ## License
 
-Code released under [the MIT license](https://github.com/TheTrunk/bitcore-node-hush/blob/master/LICENSE).
+Code released under [the MIT license](https://github.com/bitpay/bitcore-node/blob/master/LICENSE).
 
-Copyright 2013-2017 BitPay, Inc.
-Copyright 2017 TheTrunk
+Copyright 2013-2015 BitPay, Inc.
 
 - bitcoin: Copyright (c) 2009-2015 Bitcoin Core Developers (MIT License)
-
